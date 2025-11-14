@@ -1,14 +1,20 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://26rhbfdlnoqi"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://26rhbfdlnoqi"]
 
 [ext_resource type="Texture2D" uid="uid://bt8jekjwu6sn3" path="res://textures/tiles.png" id="1_g2hbc"]
+[ext_resource type="PackedScene" uid="uid://dk10ciuoqb0u6" path="res://MobSpawner.tscn" id="2_hhvbn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hhvbn"]
 texture = ExtResource("1_g2hbc")
 0:0/0 = 0
+0:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
+1:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:0/0 = 0
 6:0/0 = 0
 7:0/0 = 0
@@ -67,8 +73,11 @@ texture = ExtResource("1_g2hbc")
 1:3/0 = 0
 1:2/0 = 0
 2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:0/0 = 0
 10:0/0 = 0
 11:0/0 = 0
@@ -105,10 +114,13 @@ texture = ExtResource("1_g2hbc")
 8:1/0 = 0
 5:1/0 = 0
 2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:1/0 = 0
 0:2/0 = 0
 3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:3/0 = 0
 14:3/0 = 0
 15:3/0 = 0
@@ -260,5 +272,16 @@ texture = ExtResource("1_g2hbc")
 2:7/0 = 0
 1:1/0 = 0
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_t7fou"]
+resource_name = "scenes"
+scenes/1/scene = ExtResource("2_hhvbn")
+
 [resource]
+physics_layer_0/collision_layer = 1
+physics_layer_1/collision_layer = 3
+physics_layer_1/collision_mask = 3
+navigation_layer_0/layers = 5
+custom_data_layer_0/name = "attackable"
+custom_data_layer_0/type = 0
 sources/0 = SubResource("TileSetAtlasSource_hhvbn")
+sources/1 = SubResource("TileSetScenesCollectionSource_t7fou")
